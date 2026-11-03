@@ -1558,3 +1558,50 @@ em {
 .field textarea {
   color-scheme: dark;
 }
+
+/* ===== Mobile header ===== */
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 5%;
+    position: sticky;
+    top: 0;
+  }
+
+  .site-header .logo svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .site-header nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #2c2620;
+    scrollbar-width: none;
+  }
+
+  .site-header nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-header nav a {
+    margin-left: 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+
+  .cart-toggle {
+    margin-left: 0;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+  }
+}
