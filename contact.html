@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B&K Fragrance | Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="56" height="56"><defs><linearGradient id="gold56" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff3c4"/><stop offset="45%" stop-color="#d4af37"/><stop offset="100%" stop-color="#8a6d1f"/></linearGradient></defs><circle cx="200" cy="200" r="170" fill="none" stroke="url(#gold56)" stroke-width="6"/><polygon points="200,95 275,150 250,265 150,265 125,150" fill="none" stroke="#d4af37" stroke-width="5"/><text x="200" y="215" text-anchor="middle" font-family="Georgia, serif" font-size="70" font-weight="bold" fill="url(#gold56)">B&amp;K</text></svg></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-layout">
+    <aside class="contact-aside">
+      <span class="eyebrow">Find your scent</span>
+      <h1>Let's find the one that's yours.</h1>
+      <p>Answer a few quick questions and we will recommend the scents that suit you best.</p>
+      <a href="mailto:joshuaobiorah99@gmail.com" class="mail">joshuaobiorah99@gmail.com</a>
+    </aside>
+
+    <div class="scent-form-wrap">
+      <form id="scentForm" class="scent-form" action="https://formspree.io/f/xyeklavn" method="POST">
+
+        <!-- Step 1: scent notes -->
+        <fieldset class="form-step">
+          <legend><span class="step-num">01</span> Which notes do you love?</legend>
+          <div class="chip-group" id="notesGroup">
+            <label class="chip"><input type="checkbox" name="notes" value="Oud"><span>Oud</span></label>
+            <label class="chip"><input type="checkbox" name="notes" value="Black Pepper"><span>Black Pepper</span></label>
+            <label class="chip"><input type="checkbox" name="notes" value="Amber"><span>Amber</span></label>
+            <label class="chip"><input type="checkbox" name="notes" value="Bergamot"><span>Bergamot</span></label>
+            <label class="chip"><input type="checkbox" name="notes" value="Jasmine"><span>Jasmine</span></label>
+            <label class="chip"><input type="checkbox" name="notes" value="Vanilla"><span>Vanilla</span></label>
+            <label class="chip"><input type="checkbox" name="notes" value="Rose"><span>Rose</span></label>
+            <label class="chip"><input type="checkbox" name="notes" value="Sandalwood"><span>Sandalwood</span></label>
+            <label class="chip"><input type="checkbox" name="notes" value="Sea Salt"><span>Sea Salt</span></label>
+            <label class="chip"><input type="checkbox" name="notes" value="Cedar"><span>Cedar</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Step 2: occasion -->
+        <fieldset class="form-step">
+          <legend><span class="step-num">02</span> When will you wear it?</legend>
+          <div class="card-group">
+            <label class="choice-card">
+              <input type="radio" name="occasion" value="Everyday" required>
+              <span class="card-title">Everyday</span>
+              <span class="card-sub">Office, school, daily wear</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="occasion" value="Evening">
+              <span class="card-title">Evening</span>
+              <span class="card-sub">Dinners, dates, nights out</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="occasion" value="Special Event">
+              <span class="card-title">Special Event</span>
+              <span class="card-sub">Weddings, parties, celebrations</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Step 3: bottle size -->
+        <fieldset class="form-step">
+          <legend><span class="step-num">03</span> Choose a bottle size</legend>
+          <div class="size-group">
+            <label class="size-option">
+              <input type="radio" name="size" value="50ml" required>
+              <span>50ml</span>
+            </label>
+            <label class="size-option">
+              <input type="radio" name="size" value="100ml">
+              <span>100ml</span>
+            </label>
+            <label class="size-option">
+              <input type="radio" name="size" value="Gift Set">
+              <span>Gift Set</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Step 4: details -->
+        <fieldset class="form-step">
+          <legend><span class="step-num">04</span> Your details</legend>
+          <div class="field-row">
+            <div class="field">
+              <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required>
+              <label for="name">Full name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
+              <label for="email">Email address</label>
+            </div>
+          </div>
+          <div class="field">
+            <input type="tel" id="phone" name="phone" value="+234" placeholder=" " autocomplete="tel" inputmode="tel" list="phone-suggestions">
+            <label for="phone">Phone / WhatsApp (optional)</label>
+            <datalist id="phone-suggestions"></datalist>
+          </div>
+          <div class="field">
+            <textarea id="message" name="message" rows="4" placeholder=" "></textarea>
+            <label for="message">Anything else we should know?</label>
+          </div>
+        </fieldset>
+
+        <!-- Live summary of choices -->
+        <div class="summary" aria-live="polite">
+          <h3>Your scent brief</h3>
+          <p id="summaryNotes"><strong>Notes:</strong> none selected</p>
+          <p id="summaryOccasion"><strong>Occasion:</strong> not selected</p>
+          <p id="summarySize"><strong>Size:</strong> not selected</p>
+        </div>
+
+        <button type="submit" class="submit-btn">Send my scent brief</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer big-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="90" height="90"><defs><linearGradient id="gold90" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff3c4"/><stop offset="45%" stop-color="#d4af37"/><stop offset="100%" stop-color="#8a6d1f"/></linearGradient></defs><circle cx="200" cy="200" r="170" fill="none" stroke="url(#gold90)" stroke-width="6"/><polygon points="200,95 275,150 250,265 150,265 125,150" fill="none" stroke="#d4af37" stroke-width="5"/><text x="200" y="215" text-anchor="middle" font-family="Georgia, serif" font-size="70" font-weight="bold" fill="url(#gold90)">B&amp;K</text></svg></div>
+        <p>Bold, long-lasting perfumes with our name on every bottle.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="collection.html">Collection</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:hello@bkfragrance.com">hello@bkfragrance.com</a>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 B&amp;K Fragrance. All rights reserved.</p>
+  </footer>
+
+  <script src="contact.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>
