@@ -1627,3 +1627,64 @@ body {
 .cart-foot {
   padding-bottom: calc(24px + env(safe-area-inset-bottom));
 }
+
+/* ===== Phone fixes: stop zooming and sliding ===== */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Keep decorative parts inside the screen */
+.hero,
+.split,
+.split-visual,
+.families,
+.marquee {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .split-visual .orb {
+    width: 260px;
+    height: 260px;
+    max-width: 80vw;
+  }
+
+  .bottle-stage {
+    zoom: 1.6;
+  }
+
+  /* Stop the page zooming in when someone taps a button twice */
+  button,
+  a,
+  .btn,
+  .btn-ghost,
+  .btn-outline,
+  .submit-btn,
+  .product-card button,
+  .filter-btn,
+  .chip,
+  .choice-card,
+  .size-option {
+    touch-action: manipulation;
+  }
+
+  /* Touch screens keep the hover effect stuck after a tap, so turn it off */
+  .product-card:hover,
+  .product-card button:hover,
+  .family-card:hover,
+  .choice-card:hover,
+  .btn:hover,
+  .btn-ghost:hover,
+  .btn-outline:hover,
+  .submit-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .family-card:hover {
+    flex-grow: 1;
+  }
+}
