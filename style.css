@@ -1688,3 +1688,47 @@ body {
     flex-grow: 1;
   }
 }
+
+/* ===== Home page header fix on phones ===== */
+@media (max-width: 640px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    padding-top: 118px;
+  }
+
+  .site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  .hero {
+    min-height: 0;
+    padding: 40px 6% 80px;
+  }
+
+  .hero .hero-mark {
+    font-size: 30vw;
+  }
+
+  .bottle-stage {
+    zoom: 1.2;
+  }
+
+  .split-visual {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .marquee {
+    max-width: 100%;
+  }
+}
