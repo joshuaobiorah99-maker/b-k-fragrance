@@ -1783,3 +1783,27 @@ body {
     width: 100%;
   }
 }
+
+/* ===== Phone hero: hide scroll hint, tidy stats ===== */
+@media (max-width: 640px) {
+  .hero .scroll-cue {
+    display: none;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .hero-stats strong {
+    font-size: 1.4rem;
+  }
+
+  .hero-stats span {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+  }
+}
