@@ -7,7 +7,7 @@ const products = [
     base: "Amber",
     size: "100ml",
     price: "₦45,000",
-    image: "images/noir.png",
+    image: "noir.png",
   },
   {
     name: "B&K Golden Hour",
@@ -17,7 +17,7 @@ const products = [
     base: "Vanilla",
     size: "100ml",
     price: "₦38,000",
-    image: "images/golden-hour.png",
+    image: "golden-hour.png",
   },
   {
     name: "B&K Midnight Rose",
@@ -27,7 +27,7 @@ const products = [
     base: "Sandalwood",
     size: "100ml",
     price: "₦42,000",
-    image: "images/midnight-rose.png",
+    image: "midnight-rose.png",
   },
   {
     name: "B&K Ocean Breeze",
@@ -37,7 +37,7 @@ const products = [
     base: "Cedar",
     size: "100ml",
     price: "₦35,000",
-    image: "images/ocean-breeze.png",
+    image: "ocean-breeze.png",
   },
 ];
 
