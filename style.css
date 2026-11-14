@@ -200,7 +200,9 @@ body {
   background: #1a1612;
   border: 1px solid #2c2620;
   cursor: pointer;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .choice-card:hover {
@@ -400,8 +402,12 @@ body {
 }
 
 @keyframes pageIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Fine grain texture over the whole site */
@@ -417,7 +423,13 @@ body::before {
 
 /* Shimmering gold logo */
 .logo {
-  background: linear-gradient(90deg, #d4af37 0%, #fff3c4 40%, #d4af37 60%, #8a6d1f 100%);
+  background: linear-gradient(
+    90deg,
+    #d4af37 0%,
+    #fff3c4 40%,
+    #d4af37 60%,
+    #8a6d1f 100%
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -430,7 +442,9 @@ body::before {
 }
 
 @keyframes shimmer {
-  to { background-position: 200% center; }
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* Nav underline that draws in on hover */
@@ -467,7 +481,11 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle 320px at var(--mx, 50%) var(--my, 50%), rgba(212, 175, 55, 0.18), transparent 70%);
+  background: radial-gradient(
+    circle 320px at var(--mx, 50%) var(--my, 50%),
+    rgba(212, 175, 55, 0.18),
+    transparent 70%
+  );
 }
 
 .hero > *:not(.facets) {
@@ -485,22 +503,59 @@ body::before {
 .facets span {
   position: absolute;
   display: block;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.35), rgba(212, 175, 55, 0.03));
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.35),
+    rgba(212, 175, 55, 0.03)
+  );
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
   animation: float 14s ease-in-out infinite;
 }
 
-.facets span:nth-child(1) { width: 320px; height: 320px; top: 8%; left: 6%; }
-.facets span:nth-child(2) { width: 220px; height: 220px; top: 55%; right: 8%; animation-duration: 18s; animation-delay: -4s; }
-.facets span:nth-child(3) {
-  width: 140px; height: 140px; bottom: 10%; left: 30%; animation-duration: 11s; animation-delay: -7s;
-  background: linear-gradient(135deg, rgba(243, 234, 215, 0.25), rgba(243, 234, 215, 0.02));
+.facets span:nth-child(1) {
+  width: 320px;
+  height: 320px;
+  top: 8%;
+  left: 6%;
 }
-.facets span:nth-child(4) { width: 90px; height: 90px; top: 18%; right: 28%; animation-duration: 16s; animation-delay: -2s; }
+.facets span:nth-child(2) {
+  width: 220px;
+  height: 220px;
+  top: 55%;
+  right: 8%;
+  animation-duration: 18s;
+  animation-delay: -4s;
+}
+.facets span:nth-child(3) {
+  width: 140px;
+  height: 140px;
+  bottom: 10%;
+  left: 30%;
+  animation-duration: 11s;
+  animation-delay: -7s;
+  background: linear-gradient(
+    135deg,
+    rgba(243, 234, 215, 0.25),
+    rgba(243, 234, 215, 0.02)
+  );
+}
+.facets span:nth-child(4) {
+  width: 90px;
+  height: 90px;
+  top: 18%;
+  right: 28%;
+  animation-duration: 16s;
+  animation-delay: -2s;
+}
 
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(20px, -30px) rotate(12deg); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(20px, -30px) rotate(12deg);
+  }
 }
 
 .hero h1,
@@ -519,8 +574,16 @@ body::before {
 }
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(30px); filter: blur(6px); }
-  to { opacity: 1; transform: none; filter: none; }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
 }
 
 /* Scroll reveal (driven by motion.js) */
@@ -529,7 +592,8 @@ body::before {
   translate: 0 40px;
   transition-property: opacity, translate, transform, border-color, box-shadow;
   transition-duration: 0.9s, 0.9s, 0.25s, 0.3s, 0.3s;
-  transition-timing-function: ease, cubic-bezier(0.2, 0.7, 0.2, 1), ease, ease, ease;
+  transition-timing-function:
+    ease, cubic-bezier(0.2, 0.7, 0.2, 1), ease, ease, ease;
   transition-delay: var(--d, 0s), var(--d, 0s), 0s, 0s, 0s;
 }
 
@@ -542,7 +606,8 @@ body::before {
 .product-card {
   position: relative;
   overflow: hidden;
-  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform: perspective(900px) rotateX(var(--rx, 0deg))
+    rotateY(var(--ry, 0deg));
 }
 
 .product-card::before {
@@ -550,7 +615,11 @@ body::before {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle 180px at var(--gx, 50%) var(--gy, 50%), rgba(243, 234, 215, 0.14), transparent 70%);
+  background: radial-gradient(
+    circle 180px at var(--gx, 50%) var(--gy, 50%),
+    rgba(243, 234, 215, 0.14),
+    transparent 70%
+  );
 }
 
 .product-card:hover {
@@ -572,8 +641,13 @@ body::before {
 }
 
 @keyframes bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .bottle-body {
@@ -588,7 +662,12 @@ body::before {
   left: -60%;
   width: 40%;
   height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
   transform: rotate(20deg);
   animation: sheen 4s ease-in-out infinite;
 }
@@ -599,8 +678,13 @@ body::before {
 }
 
 @keyframes sheen {
-  0% { left: -60%; }
-  60%, 100% { left: 130%; }
+  0% {
+    left: -60%;
+  }
+  60%,
+  100% {
+    left: 130%;
+  }
 }
 
 /* Buttons get a light sweep on hover */
@@ -620,7 +704,12 @@ body::before {
   left: -75%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
   transform: skewX(-20deg);
   transition: left 0.6s ease;
 }
@@ -661,9 +750,12 @@ body::before {
 .reveal {
   opacity: 0;
   translate: 0 40px;
-  transition-property: opacity, translate, transform, border-color, box-shadow, flex-grow;
+  transition-property:
+    opacity, translate, transform, border-color, box-shadow, flex-grow;
   transition-duration: 0.9s, 0.9s, 0.25s, 0.3s, 0.3s, 0.6s;
-  transition-timing-function: ease, cubic-bezier(0.2, 0.7, 0.2, 1), ease, ease, ease, cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-timing-function:
+    ease, cubic-bezier(0.2, 0.7, 0.2, 1), ease, ease, ease,
+    cubic-bezier(0.2, 0.7, 0.2, 1);
   transition-delay: var(--d, 0s), var(--d, 0s), 0s, 0s, 0s, 0s;
 }
 
@@ -708,8 +800,14 @@ em {
 }
 
 @keyframes markIn {
-  from { opacity: 0; letter-spacing: 0.25em; }
-  to { opacity: 1; letter-spacing: -0.04em; }
+  from {
+    opacity: 0;
+    letter-spacing: 0.25em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: -0.04em;
+  }
 }
 
 .hero h1 {
@@ -739,7 +837,9 @@ em {
   color: var(--cream);
   text-decoration: none;
   letter-spacing: 1px;
-  transition: border-color 0.3s ease, color 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .btn-ghost:hover {
@@ -793,10 +893,21 @@ em {
 }
 
 @keyframes cue {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }
 
 /* ----- Marquee band ----- */
@@ -830,7 +941,9 @@ em {
 }
 
 @keyframes marquee {
-  to { transform: translateX(-50%); }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ----- Craft split ----- */
@@ -857,7 +970,11 @@ em {
   width: 380px;
   height: 380px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.35), transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.35),
+    transparent 65%
+  );
   filter: blur(10px);
   animation: float 12s ease-in-out infinite;
 }
@@ -963,9 +1080,15 @@ em {
   border-color: var(--gold);
 }
 
-.family-card.woody { --fam: linear-gradient(160deg, #5a3d22, #2a1c10); }
-.family-card.floral { --fam: linear-gradient(160deg, #6b2f3d, #2f1219); }
-.family-card.fresh { --fam: linear-gradient(160deg, #2f5a5a, #10262a); }
+.family-card.woody {
+  --fam: linear-gradient(160deg, #5a3d22, #2a1c10);
+}
+.family-card.floral {
+  --fam: linear-gradient(160deg, #6b2f3d, #2f1219);
+}
+.family-card.fresh {
+  --fam: linear-gradient(160deg, #2f5a5a, #10262a);
+}
 
 .family-name {
   font-size: 1.8rem;
@@ -1206,7 +1329,9 @@ em {
   text-decoration: none;
   margin-bottom: 10px;
   opacity: 0.85;
-  transition: color 0.3s ease, opacity 0.3s ease;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .footer-col a:hover {
@@ -1478,14 +1603,27 @@ em {
 }
 
 @keyframes cartPulse {
-  0% { transform: scale(1); }
-  30% { transform: scale(1.12); background: #d4af37; color: #0f0d0b; }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.12);
+    background: #d4af37;
+    color: #0f0d0b;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes countBump {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.5); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
 }
 
 .cart-empty {
@@ -1521,7 +1659,10 @@ em {
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .product-card button:hover {

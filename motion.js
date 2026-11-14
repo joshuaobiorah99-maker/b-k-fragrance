@@ -1,13 +1,15 @@
 // Shared motion layer: hero facets, cursor glow, scroll reveals and product tilt.
 document.addEventListener("DOMContentLoaded", () => {
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   // Floating faceted gems behind the hero (home page only).
   const hero = document.querySelector(".hero");
   if (hero && !reduceMotion) {
     hero.insertAdjacentHTML(
       "afterbegin",
-      '<div class="facets" aria-hidden="true"><span></span><span></span><span></span><span></span></div>'
+      '<div class="facets" aria-hidden="true"><span></span><span></span><span></span><span></span></div>',
     );
 
     // Gold spotlight that follows the cursor across the hero.
@@ -37,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".summary",
     ".submit-btn",
     ".field",
-    ".product-card"
+    ".product-card",
   ];
 
   function revealAll(root = document) {
@@ -66,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
               }
             });
           },
-          { threshold: 0.15 }
+          { threshold: 0.15 },
         )
       : null;
 

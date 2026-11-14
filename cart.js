@@ -105,7 +105,9 @@
         <button class="cart-remove" data-action="remove" data-name="">Remove</button>
       `;
       row.querySelector("strong").textContent = item.name;
-      row.querySelectorAll("button").forEach((b) => (b.dataset.name = item.name));
+      row
+        .querySelectorAll("button")
+        .forEach((b) => (b.dataset.name = item.name));
       linesEl.appendChild(row);
     });
 
@@ -117,12 +119,12 @@
 
   function buildWhatsAppLink() {
     const lines = items.map(
-      (i) => `- ${i.name} x${i.qty} (${formatNaira(i.price)} each)`
+      (i) => `- ${i.name} x${i.qty} (${formatNaira(i.price)} each)`,
     );
     const message = [
       "Hello B&K Fragrance, I would like to order:",
       ...lines,
-      `Total: ${formatNaira(cartTotal())}`
+      `Total: ${formatNaira(cartTotal())}`,
     ].join("\n");
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   }
@@ -144,7 +146,7 @@
     showToast.timer = setTimeout(() => toast.classList.remove("show"), 2000);
   }
 
-    // Add to cart buttons on product cards
+  // Add to cart buttons on product cards
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".product-card button");
     if (!btn) return;

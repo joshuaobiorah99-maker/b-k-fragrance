@@ -9,7 +9,9 @@ const PHONE_KEY = "bk-phone-numbers";
 
 // Update the scent brief as the visitor makes choices.
 function updateSummary() {
-  const notes = [...form.querySelectorAll('input[name="notes"]:checked')].map((n) => n.value);
+  const notes = [...form.querySelectorAll('input[name="notes"]:checked')].map(
+    (n) => n.value,
+  );
   const occasion = form.querySelector('input[name="occasion"]:checked');
   const size = form.querySelector('input[name="size"]:checked');
 
@@ -60,7 +62,10 @@ phone.addEventListener("focus", () => {
 
 phone.addEventListener("keydown", (e) => {
   // Stop backspace or delete from removing the +234 prefix
-  if ((e.key === "Backspace" || e.key === "Delete") && phone.selectionStart <= 4) {
+  if (
+    (e.key === "Backspace" || e.key === "Delete") &&
+    phone.selectionStart <= 4
+  ) {
     e.preventDefault();
   }
 });
@@ -92,7 +97,7 @@ form.addEventListener("submit", async (event) => {
     const response = await fetch(form.action, {
       method: "POST",
       body: new FormData(form),
-      headers: { Accept: "application/json" }
+      headers: { Accept: "application/json" },
     });
 
     if (response.ok) {
@@ -100,13 +105,15 @@ form.addEventListener("submit", async (event) => {
       form.reset();
       phone.value = "+234";
       updateSummary();
-      status.textContent = "Thank you! We will contact you shortly with your scent recommendations.";
+      status.textContent =
+        "Thank you! We will contact you shortly with your scent recommendations.";
       status.className = "form-status success";
     } else {
       throw new Error("Request failed");
     }
   } catch (error) {
-    status.textContent = "Something went wrong. Please try again or email hello@bkfragrance.com.";
+    status.textContent =
+      "Something went wrong. Please try again or email hello@bkfragrance.com.";
     status.className = "form-status error";
   }
 });

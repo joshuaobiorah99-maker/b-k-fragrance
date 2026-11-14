@@ -7,7 +7,7 @@ const products = [
     base: "Amber",
     size: "100ml",
     price: "₦45,000",
-    image: "noir.png"
+    image: "images/noir.png",
   },
   {
     name: "B&K Golden Hour",
@@ -17,7 +17,7 @@ const products = [
     base: "Vanilla",
     size: "100ml",
     price: "₦38,000",
-    image: "golden-hour.png"
+    image: "images/golden-hour.png",
   },
   {
     name: "B&K Midnight Rose",
@@ -27,7 +27,7 @@ const products = [
     base: "Sandalwood",
     size: "100ml",
     price: "₦42,000",
-    image: "midnight-rose.png"
+    image: "images/midnight-rose.png",
   },
   {
     name: "B&K Ocean Breeze",
@@ -37,8 +37,8 @@ const products = [
     base: "Cedar",
     size: "100ml",
     price: "₦35,000",
-    image: "ocean-breeze.png"
-  }
+    image: "images/ocean-breeze.png",
+  },
 ];
 
 function bottleHTML() {
@@ -104,7 +104,8 @@ if (collectionGrid) {
   const requested = params.get("family");
 
   function applyFilter(family) {
-    const list = family === "All" ? products : products.filter((p) => p.family === family);
+    const list =
+      family === "All" ? products : products.filter((p) => p.family === family);
     renderProducts("productGrid", list);
 
     filterButtons.forEach((btn) => {
@@ -118,6 +119,8 @@ if (collectionGrid) {
     btn.addEventListener("click", () => applyFilter(btn.dataset.filter));
   });
 
-  const startFamily = ["Woody", "Floral", "Fresh"].includes(requested) ? requested : "All";
+  const startFamily = ["Woody", "Floral", "Fresh"].includes(requested)
+    ? requested
+    : "All";
   applyFilter(startFamily);
 }
